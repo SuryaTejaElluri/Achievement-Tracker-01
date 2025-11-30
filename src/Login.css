@@ -1,0 +1,74 @@
+/* Space Background */
+.login-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Twinkling Stars */
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow: 
+    100px 200px white, 300px 600px white, 500px 150px white,
+    700px 400px white, 900px 250px white, 1200px 500px white,
+    1400px 700px white, 1600px 350px white;
+  animation: twinkle 2s infinite ease-in-out alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* Shooting Stars */
+.shooting-star {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  top: -50px;
+  left: 0;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  animation: fall 4s linear infinite;
+}
+
+.shooting-star:nth-child(2) {
+  top: -150px;
+  left: 40%;
+  animation-delay: 2s;
+}
+.shooting-star:nth-child(3) {
+  top: -250px;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+@keyframes fall {
+  0% { transform: translate(0, 0) rotate(45deg); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(800px, 800px) rotate(45deg); opacity: 0; }
+}
+
+/* Login Card */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
